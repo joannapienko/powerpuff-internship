@@ -7,11 +7,8 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [
-    SharedModule,
-    RouterOutlet
-  ]
+  imports: [SharedModule, RouterOutlet],
 })
 export class AppComponent {
-  title = 'powerpuff-internship-fe';
+  title = 'powerpuff-internship';
 }

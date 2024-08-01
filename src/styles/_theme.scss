@@ -105,8 +105,8 @@ $vma-mat-tertiary-palette: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$powerpuff-internship-fe-primary: mat.define-palette(mat.$indigo-palette);
-$powerpuff-internship-fe-accent: mat.define-palette(
+$powerpuff-internship-primary: mat.define-palette(mat.$indigo-palette);
+$powerpuff-internship-accent: mat.define-palette(
   mat.$pink-palette,
   A200,
   A100,
@@ -114,16 +114,16 @@ $powerpuff-internship-fe-accent: mat.define-palette(
 );
 
 // The warn palette is optional (defaults to red).
-$powerpuff-internship-fe-warn: mat.define-palette(mat.$red-palette);
+$powerpuff-internship-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$powerpuff-internship-fe-theme: mat.define-light-theme(
+$powerpuff-internship-theme: mat.define-light-theme(
   (
     color: (
-      primary: $powerpuff-internship-fe-primary,
-      accent: $powerpuff-internship-fe-accent,
-      warn: $powerpuff-internship-fe-warn,
+      primary: $powerpuff-internship-primary,
+      accent: $powerpuff-internship-accent,
+      warn: $powerpuff-internship-warn,
     ),
     mat.define-typography-config(
         $font-family: "Vattenfall Hall",
@@ -135,7 +135,7 @@ $powerpuff-internship-fe-theme: mat.define-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($powerpuff-internship-fe-theme);
+@include mat.all-component-themes($powerpuff-internship-theme);
 
 // font-sizes
 

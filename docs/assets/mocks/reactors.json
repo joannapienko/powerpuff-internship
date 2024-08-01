@@ -1,0 +1,185 @@
+{
+    "status": {
+        "sectionInfo": "string",
+        "statusPowerProduction": "out-of-range",
+        "statusCoreTemperature": "in-range"
+    },
+    "list": [
+        {
+            "id": "1",
+            "name": "Reactor 1",
+            "description": "Lorem ipsum dolor sit amet consectetur. Adipiscing non pulvinar placerat lorem ullamcorper magna. Pulvinar bibendum enim.",
+            "status": {
+                "coreTempStatus": "in-range",
+                "powerProdStatus": "critical"
+            },
+            "reactorCoreTemperature": [
+                {
+                    "time": 1,
+                    "value": 500,
+                    "status": "in-range"
+                },
+                {
+                    "time": 2,
+                    "value": 121,
+                    "status": "in-range"
+                },
+                {
+                    "time": 3,
+                    "value": 11,
+                    "status": "out-of-range"
+                },
+                {
+                    "time": 4,
+                    "value": 640,
+                    "status": "critical"
+                },
+                {
+                    "time": 5,
+                    "value": 600,
+                    "status": "critical"
+                },
+                {
+                    "time": 6,
+                    "value": 111,
+                    "status": "in-range"
+                },
+                {
+                    "time": 7,
+                    "value": 121,
+                    "status": "in-range"
+                },
+                {
+                    "time": 8,
+                    "value": 21,
+                    "status": "out-of-range"
+                }
+            ],
+            "reactorPowerProduction": [
+                {
+                    "time": 1,
+                    "value": 500,
+                    "status": "in-range"
+                },
+                {
+                    "time": 2,
+                    "value": 121,
+                    "status": "in-range"
+                },
+                {
+                    "time": 3,
+                    "value": 11,
+                    "status": "out-of-range"
+                },
+                {
+                    "time": 4,
+                    "value": 640,
+                    "status": "critical"
+                },
+                {
+                    "time": 5,
+                    "value": 600,
+                    "status": "critical"
+                },
+                {
+                    "time": 6,
+                    "value": 111,
+                    "status": "in-range"
+                },
+                {
+                    "time": 7,
+                    "value": 121,
+                    "status": "in-range"
+                },
+                {
+                    "time": 8,
+                    "value": 21,
+                    "status": "out-of-range"
+                }
+            ],
+            "links": [
+                {
+                    "label": "Link 1",
+                    "href": "https://google.com"
+                },
+                {
+                    "label": "Link 2",
+                    "href": "https://google.com"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Reactor 2",
+            "description": "Lorem ipsum dolor sit amet consectetur. Adipiscing non pulvinar placerat lorem ullamcorper magna. Pulvinar bibendum enim.",
+            "status": {
+                "coreTempStatus": "in-range",
+                "powerProdStatus": "out-of-range"
+            },
+            "reactorCoreTemperature": [
+                {
+                    "time": 1,
+                    "value": 500,
+                    "status": "in-range"
+                },
+                {
+                    "time": 2,
+                    "value": 121,
+                    "status": "in-range"
+                },
+                {
+                    "time": 3,
+                    "value": 11,
+                    "status": "out-of-range"
+                },
+                {
+                    "time": 4,
+                    "value": 331,
+                    "status": "critical"
+                },
+                {
+                    "time": 5,
+                    "value": 111,
+                    "status": "in-range"
+                }
+            ],
+            "reactorPowerProduction": [
+                {
+                    "time": 1,
+                    "value": 111,
+                    "status": "in-range"
+                },
+                {
+                    "time": 2,
+                    "value": 121,
+                    "status": "in-range"
+                },
+                {
+                    "time": 3,
+                    "value": 11,
+                    "status": "out-of-range"
+                },
+                {
+                    "time": 4,
+                    "value": 331,
+                    "status": "critical"
+                },
+                {
+                    "time": 5,
+                    "value": 211,
+                    "status": "in-range"
+                }
+            ],
+            "links": [
+                {
+                    "label": "Link 1",
+                    "href": "https://google.com"
+                },
+                {
+                    "label": "Link 2",
+                    "href": "https://google.com"
+                }
+            ]
+        }
+    ]
+}

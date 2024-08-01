@@ -8,6 +8,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ImageComponent } from './components/image/image.component';
 import { WarningComponent } from './components/warning/warning.component';
 import { NgLetDirective } from './directives/ng-let.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NgLetDirective } from './directives/ng-let.directive';
     WarningComponent,
     NgLetDirective,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -30,6 +31,7 @@ import { NgLetDirective } from './directives/ng-let.directive';
     ImageComponent,
     WarningComponent,
     NgLetDirective,
+    HttpClientModule,
   ],
 })
 export class SharedModule {}
