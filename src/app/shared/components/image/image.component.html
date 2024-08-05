@@ -1,0 +1,5 @@
+<div class="image">
+    <img [src]="image.base64" [alt]="image.title" />
+    <h3 class="image__title" *ngIf="style ==  ImageType.full">{{image.title}}</h3>
+    <p class="image__description" *ngIf="style == ImageType.full">{{image.description}}</p>
+</div>

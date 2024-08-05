@@ -1,0 +1,29 @@
+@import "variables";
+
+.useful-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  &__title{
+   margin: 0
+  }
+
+  &__container {
+    &__link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+
+      &__icon {
+        color: $ocean-blue;
+      }
+
+      &__label {
+        color: $black;
+      }
+    }
+  }
+}

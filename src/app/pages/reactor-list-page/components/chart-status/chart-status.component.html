@@ -1,0 +1,15 @@
+<div class="chart-status">
+  <div class="chart-status__container">
+    <div>{{title}}: </div>
+    <div class="chart-status__container__status">
+      <ng-container [ngSwitch]="status">
+        <ng-container *ngSwitchCase="statuses.inRange">In range <div class="chart-status__dot chart-status__dot--green">
+          </div></ng-container>
+        <ng-container *ngSwitchCase="statuses.outOfRange">Out of range <div
+            class="chart-status__dot chart-status__dot--yellow"></div></ng-container>
+        <ng-container *ngSwitchCase="statuses.critical">Critically out of range <div
+            class="chart-status__dot chart-status__dot--red"></div></ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

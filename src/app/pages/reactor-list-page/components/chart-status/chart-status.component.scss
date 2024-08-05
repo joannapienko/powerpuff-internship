@@ -1,0 +1,37 @@
+@import "variables";
+.chart-status{
+  background-color: $light-blue;
+  display: block;
+  padding: 1.5rem;
+  margin-top: 1rem;
+
+  &__container{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    &__status{
+      display: inline-flex;
+      gap:1rem;
+      font-weight: bold;
+    }
+  }
+  &__dot {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 7rem;
+    display: inline-block;
+
+    &--green {
+      background-color: $green;
+    }
+
+    &--yellow {
+      background-color: $sollor-yellow;
+    }
+
+    &--red {
+      background-color: $red;
+    }
+  }
+
+}

@@ -1,0 +1,32 @@
+@import "variables";
+
+.legend {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--left{
+    justify-content: left;
+  }
+
+  &__dot {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 7rem;
+    display: inline-block;
+    margin: 1rem;
+
+    &--green {
+      background-color: $green;
+    }
+
+    &--yellow {
+      background-color: $sollor-yellow;
+    }
+
+    &--red {
+      background-color: $red;
+    }
+  }
+}

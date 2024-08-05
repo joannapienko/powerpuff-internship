@@ -1,0 +1,39 @@
+@import "variables";
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  &__container {
+    width: 82rem;
+  }
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    &__dot {
+      border: 3px solid $ocean-blue;
+      width: 0.5rem;
+      height: 0.5rem;
+      margin: 1rem 1.5rem;
+      border-radius: 50%;
+      &--filled {
+        background-color: $ocean-blue;
+      }
+    }
+    &__arrow {
+      margin: 0 2rem;
+      border: none;
+      background-color: white;
+      &__icon {
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        filter: invert(33%) sepia(83%) saturate(828%) hue-rotate(175deg)
+          brightness(93%) contrast(88%);
+      }
+    }
+  }
+}

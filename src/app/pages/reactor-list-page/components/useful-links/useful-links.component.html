@@ -1,0 +1,7 @@
+<div *ngIf="links" class="useful-links">
+  <h4 class="useful-links__title">Useful links:</h4>
+  <div class="useful-links__container" *ngFor="let link of links">
+    <a class="useful-links__container__link" [href]="link.href"> <span class="material-icons useful-links__container__link__icon">attachment</span>
+      <span class="useful-links__container__link__label">{{link.label}} </span></a>
+  </div>
+</div>

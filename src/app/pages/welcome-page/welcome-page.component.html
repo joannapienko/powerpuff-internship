@@ -1,0 +1,39 @@
+<div class="welcome"
+  *ngLet="{ safetyStatus: safetyStatus$ | async, locationImage: locationImage$ | async, reactorList: reactorList$ |async} as data">
+  <h1 class="welcome__title">Welcome!</h1>
+  <p class="welcome__paragraph">Lorem ipsum dolor sit amet consectetur. Adipiscing non pulvinar placerat lorem
+    ullamcorper magna. Pulvinar bibendum enim eget nullam lacus urna. Consequat lorem lectus imperdiet tincidunt. Orci
+    magnis tempus tempus sit.</p>
+  <a href="/reactors"><custom-btn label="See our reactors"></custom-btn></a>
+  <div class="welcome__status">
+    <h2>Safety system status</h2>
+    <p class="welcome__paragraph">Lorem ipsum dolor sit amet consectetur. Adipiscing non pulvinar placerat lorem
+      ullamcorper magna. Pulvinar bibendum enim.</p>
+    <div class="welcome__status__section">
+      <app-status class="welcome__status__section__status-container" [status]="data.safetyStatus"></app-status>
+      <app-warning
+        *ngIf="data.safetyStatus.statusPowerProduction !== Status.inRange || data.safetyStatus.statusCoreTemperature !== Status.inRange"
+        [safetyStatus]="data.safetyStatus"></app-warning>
+    </div>
+
+    <app-legend></app-legend>
+    <a href="/reactors"><custom-btn label="See all reactors" [type]="ButtonType.outlined"></custom-btn></a>
+  </div>
+
+  <div>
+    <h2>Our locations</h2>
+    <p class="welcome__paragraph"> Lorem ipsum dolor sit amet consectetur. Adipiscing non pulvinar placerat lorem
+      ullamcorper magna. Pulvinar bibendum enim eget nullam lacus urna. Consequat lorem lectus imperdiet tincidunt. Orci
+      magnis tempus tempus sit</p>
+    <app-image [image]="data.locationImage" [style]="ImageType.standard"></app-image>
+  </div>
+  <div>
+    <h2>Our reactors</h2>
+    <p class="welcome__paragraph"> Lorem ipsum dolor sit amet consectetur. Adipiscing non pulvinar placerat lorem
+      ullamcorper magna. Pulvinar bibendum enim eget nullam lacus urna. Consequat lorem lectus imperdiet tincidunt. Orci
+      magnis tempus tempus sit</p>
+    <app-carousel [elementsList]="data.reactorList"></app-carousel>
+    <a href="/reactors"> <custom-btn label="See all reactors" [type]="ButtonType.outlined"> </custom-btn></a>
+
+  </div>
+</div>
