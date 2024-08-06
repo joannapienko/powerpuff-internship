@@ -1,11 +1,13 @@
-<div class="warning warning--{{warningType}}">
+<div class="warning warning--{{warningType}} warning--{{warningStyle}}">
+
     <div class="warning__icon-container">
         <img class="warning__icon-container__icon" src="assets/icons/alert.svg">
     </div>
-    <div class="warning__content"> {{typeOfError}}of {{ reactorName}} has exeeded safe levels. Urgent attention
+    <div class="warning__content"> {{typeOfError}} of <span class="warning__content__reactor-name">{{ reactorName
+            }}</span> has exeeded safe levels. Urgent attention
         required.
-        <br>
-        <a href="/reactors">See details ></a>
+        <br *ngIf="warningStyle == WarningStyle.standard">
+        <a href="reactors" class="warning__link">See details</a>
     </div>
 
 </div>

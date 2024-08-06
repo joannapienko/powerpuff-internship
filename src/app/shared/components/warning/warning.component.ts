@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Status } from '../../../core/enums/status.enum';
 import { SafetyStatusModel } from '../../../core/models/safetyStatus.model';
 import { ReactorModel } from '../../../core/models/reactor.model';
+import { WarningStyle } from '../../../core/enums/warningStyle.enum';
 
 @Component({
   selector: 'app-warning',
@@ -11,11 +12,13 @@ import { ReactorModel } from '../../../core/models/reactor.model';
 export class WarningComponent implements OnInit {
   @Input() safetyStatus?: SafetyStatusModel;
   @Input() reactorStatus?: ReactorModel;
+  @Input() warningStyle?: WarningStyle = WarningStyle.standard;
   typeOfError?: string;
   reactorName?: string;
   warningType: Status = Status.outOfRange;
-
+  WarningStyle = WarningStyle;
   ngOnInit() {
+    console.log(this.safetyStatus);
     if (!!this.safetyStatus) {
       this.reactorName = this.safetyStatus.extendedStatus?.name;
       if (this.safetyStatus.statusCoreTemperature !== Status.inRange) {

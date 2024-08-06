@@ -1,4 +1,10 @@
-<div class="reactor-list-page" *ngLet="reactors$ |async as reactors">
+<div class="reactor-list-page" *ngLet="reactors$ | async as reactors">
+  <ng-container *ngFor="let reactor of reactors">
+    <app-warning
+      *ngIf="reactor.status.coreTempStatus !== Status.inRange || reactor.status.powerProdStatus !== Status.inRange"
+      [warningStyle]="WarningStyle.notification" [reactorStatus]="reactor"></app-warning>
+  </ng-container>
+
   <h1 class="reactor-list-page__title">Our reactors</h1>
   <h4 class="reactor-list-page__description">{{description}}</h4>
   <ng-container *ngFor="let reactor of reactors">

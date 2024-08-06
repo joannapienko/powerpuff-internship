@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "powerpuff-internship-fe": {
+    "powerpuff-internship": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/powerpuff-internship-fe",
+            "outputPath": "dist/powerpuff-internship",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "powerpuff-internship-fe:build:production"
+              "buildTarget": "powerpuff-internship:build:production"
             },
             "development": {
-              "buildTarget": "powerpuff-internship-fe:build:development"
+              "buildTarget": "powerpuff-internship:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "powerpuff-internship-fe:build"
+            "buildTarget": "powerpuff-internship:build"
           }
         },
         "test": {
@@ -99,6 +99,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
