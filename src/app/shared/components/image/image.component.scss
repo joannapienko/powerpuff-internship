@@ -1,5 +1,14 @@
+@import "variables";
 .image {
   &__description {
+    padding: 0 8rem;
+    
+  }
+  &__link
+  {
+    color: $ocean-blue;
+    text-align: center;
+    text-decoration: none;
     padding: 0 8rem;
   }
 }

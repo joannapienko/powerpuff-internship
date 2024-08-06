@@ -1,5 +1,6 @@
 <div class="image">
-    <img [src]="image.base64" [alt]="image.title" />
-    <h3 class="image__title" *ngIf="style ==  ImageType.full">{{image.title}}</h3>
+    <img [src]="image.imageContent" [alt]="image.title"/>
+    <h3 class="image__title" *ngIf="style ==  ImageType.full">{{image.name}}</h3>
     <p class="image__description" *ngIf="style == ImageType.full">{{image.description}}</p>
+    <a href="/reactors" class="image__link" *ngIf="style == ImageType.full">Learn more</a>
 </div>
