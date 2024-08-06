@@ -28,8 +28,12 @@ export function toReactorModel(source: ReactorModelDTO[]): ReactorModel[] {
 
 function toReactorStatusModel(source: ReactorStatusDTO): ReactorStatus {
   return {
-    coreTempStatus: source.coreTempStatus as Status,
-    powerProdStatus: source.powerProdStatus as Status,
+    coreTempStatus: source.coreTempStatus
+      ? (source.coreTempStatus as Status)
+      : Status.inRange,
+    powerProdStatus: source.powerProdStatus
+      ? (source.powerProdStatus as Status)
+      : Status.inRange,
   };
 }
 
@@ -38,7 +42,10 @@ function toReactorChartDataModel(
 ): ChartDataModel[] | void {
   if (source) {
     return source.map((data) => {
-      return { ...data, status: data.status as Status };
+      return {
+        ...data,
+        status: data.status ? (data.status as Status) : Status.inRange,
+      };
     });
   }
 }

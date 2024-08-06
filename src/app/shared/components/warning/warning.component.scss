@@ -4,15 +4,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: $light-yellow;
   height: 100%;
 
   &__icon-container {
     width: 7rem;
     height: 7rem;
     margin: 0 3rem;
-    background-color: $sollor-yellow;
     align-content: center;
+
     &__icon {
       width: 3.8rem;
       height: 3.8rem;
@@ -22,5 +21,59 @@
 
   &__content {
     text-align: left;
+  }
+}
+
+.warning--critical.warning--notification {
+  background-color: $red;
+  color: $white;
+  .warning {
+    &__link {
+      color: $white;
+    }
+    &__icon-container__icon {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+.warning--out-of-range.warning--notification {
+  background-color: $sollor-yellow;
+}
+
+.warning--critical.warning--standard {
+  background-color: $light-red;
+
+  .warning__icon-container {
+    background-color: $red;
+  }
+}
+
+.warning--out-of-range.warning--standard {
+  background-color: $light-yellow;
+
+  .warning__icon-container {
+    background-color: $sollor-yellow;
+  }
+}
+
+.warning--notification {
+  padding: 0.5rem 1rem;
+  width: 80vw;
+  margin-bottom: 0.5rem;
+
+  .warning {
+    &__icon-container {
+      width: 5rem;
+      height: 5rem;
+      margin: 0 0.5rem;
+    }
+
+    &__content {
+      width: 100%;
+      &__reactor-name {
+        font-weight: 700;
+      }
+    }
   }
 }

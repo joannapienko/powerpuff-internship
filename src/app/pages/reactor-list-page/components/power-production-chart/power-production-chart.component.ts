@@ -60,11 +60,29 @@ export class PowerProductionChartComponent implements AfterViewInit {
           yAxisKey: 'value',
         },
         scales: {
-          y: {
-            beginAtZero: true,
-          },
+          x: {
+            grid: {
+              display: false,
+            }
+          }
         },
         plugins: {
+          tooltip: {
+            backgroundColor: '#2071b5',
+            titleAlign: 'center',
+            bodyAlign: 'center',
+            xAlign: 'center',
+            yAlign: 'bottom',
+            padding: 8,
+            boxPadding: 3,
+            callbacks: {
+              title: function(tooltipItem){
+                return '';
+              },
+              label: function(tooltipItem){
+                return tooltipItem.formattedValue + ' MW';
+              }
+            }},
           title: {
             display: true,
             text: 'Power production output',

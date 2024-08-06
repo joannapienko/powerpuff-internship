@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
+## Before running project
+
+- npm install -g @angular/cli@17
+- npm install
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -25,3 +30,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Deploy to github pages
+
+1. Merge your changes to gh-pages branch and run command in terminal:
+   ng build --output-path docs --base-href /powerpuff-internship/
+2. Get files from /docs/browser folder to /docs folder
+3. Copy index.html file and paste is in docs folder
+4. Rename index.html copy file to 404.html
+5. Commit changes to gh-pages branch and push it to origin

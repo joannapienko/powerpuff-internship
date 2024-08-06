@@ -1,5 +1,5 @@
 export interface ImageModel {
-  base64: string;
+  imageContent: string;
   description: string;
   title?: string;
 }

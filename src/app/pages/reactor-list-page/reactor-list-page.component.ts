@@ -7,6 +7,7 @@ import { Store } from '@ngxs/store';
 import { FetchReactorsAction, ReactorsState } from '../../store/reactors';
 import { Observable } from 'rxjs';
 import { SharedModule } from '../../shared/shared.module';
+import { WarningStyle } from '../../core/enums/warningStyle.enum';
 
 @Component({
   selector: 'app-reactor-list-page',
@@ -21,7 +22,8 @@ export class ReactorListPageComponent implements OnInit {
     'Pulvinar bibendum enim eget nullam lacus urna. Consequat lorem lectus imperdiet tincidunt. Orci magnis tempus tempus sit.';
 
   reactors$!: Observable<ReactorModel[]>;
-
+  WarningStyle = WarningStyle;
+  Status = Status;
   constructor(private store: Store) {}
   ngOnInit(): void {
     this.store.dispatch(new FetchReactorsAction());
