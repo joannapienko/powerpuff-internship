@@ -3,7 +3,8 @@
     <div class="warning__icon-container">
         <img class="warning__icon-container__icon" src="assets/icons/alert.svg">
     </div>
-    <div class="warning__content"> {{typeOfError}} of <span class="warning__content__reactor-name">{{ reactorName
+    <div class="warning__content"> {{typeOfError}} <span class="warning__content__reactor-name" *ngIf="reactorName"> of
+            {{ reactorName
             }}</span> has exeeded safe levels. Urgent attention
         required.
         <br *ngIf="warningStyle == WarningStyle.standard">

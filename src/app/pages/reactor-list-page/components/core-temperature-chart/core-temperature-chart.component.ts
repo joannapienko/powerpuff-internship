@@ -35,7 +35,6 @@ export class CoreTemperatureChartComponent implements AfterViewInit {
     this.dataForChart = this.chartService.getColorsAndLabelsForChart(
       this.chartData
     );
-    console.log(this.dataForChart);
     this.chart = new Chart(ctx, {
       type: 'line',
       data: {
@@ -46,7 +45,17 @@ export class CoreTemperatureChartComponent implements AfterViewInit {
             data: this.chartData,
             pointBackgroundColor: this.dataForChart.colors,
             pointBorderColor: this.dataForChart.colors,
-            borderColor: this.dataForChart.colors,
+            // borderColor: function (context) {
+            //   const chart = context.chart;
+            //   const { ctx, chartArea } = chart;
+
+            //   if (!chartArea) {
+            //     // This case happens on initial chart load
+            //     return;
+            //   }
+            //   return getSegmentColor2(ctx, chartArea);
+            // },
+
             backgroundColor: this.dataForChart.colors,
             fill: false,
             tension: 0.2,
@@ -138,4 +147,31 @@ function getSegmentColor(
   let point = ctx.p1;
   console.log(point);
   return dataForChart[point.parsed.x - 1];
+}
+
+function getSegmentColor2(ctx: any, chartArea: any): any {
+  // const max = ctx.scales.y.max;
+  const max = 1500;
+
+  let width, height, gradient;
+
+  const chartWidth = chartArea.right - chartArea.left;
+  const chartHeight = chartArea.bottom - chartArea.top;
+  if (!gradient || width !== chartWidth || height !== chartHeight) {
+    width = chartWidth;
+    height = chartHeight;
+    const colors = {
+      critical: '#f93b18',
+      outOfRange: '#ffda00',
+      inRange: '#2071b5',
+    };
+    gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+    gradient.addColorStop(250 / max, colors.critical);
+    gradient.addColorStop(400 / max, colors.outOfRange);
+    gradient.addColorStop(800 / max, colors.inRange);
+    gradient.addColorStop(950 / max, colors.outOfRange);
+    gradient.addColorStop(1200 / max, colors.critical);
+  }
+
+  return gradient;
 }
